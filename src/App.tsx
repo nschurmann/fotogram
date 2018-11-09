@@ -7,12 +7,42 @@ import Register from './Containers/Auth/Register';
 import NewsFeed from './Containers/NewsFeed/NewsFeed';
 import NavBar from './Components/NavBar';
 import Profile from './Containers/Profile/Profile';
+import services from './Services';
+import { History } from 'history';
+
+interface IAppProps {
+  history: History
+}
 
 
-class App extends Component {
+class App extends Component<IAppProps> {
+
+  public state = {
+    loading: true,
+  }
+
+  public componentDidMount() {
+    const { auth } = services
+    auth.onAuthStateChanged(user => {
+      if (user) {
+        if (['/Login','/register'].indexOf(location.pathname) > -1) {
+          const { history } = this.props
+          history.push('/App/Newsfeed')
+        }
+      } else if(/\app\/./.test(location.pathname)) {
+        const { history } = this.props
+          history.push('/Login')
+      }
+      console.log(user)
+      this.setState({
+        loading: false
+      })
+    })
+  }
   render() {
+    const { loading } = this.state
     return (
-      <div>
+      loading ? 'loading' : <div>
         <Route exact={true} path='/Login' component={Login}/>
         <Route exact={true} path='/Register' component={Register}/>
         <Route path='/App' component={NavBar} />

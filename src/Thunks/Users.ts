@@ -1,13 +1,17 @@
 import { Dispatch } from "redux";
 import { IServices } from '../Services'
-//import { ILogin } from '../Models/LoginModel';
+import { ILogin } from '../Models/LoginModel';
 
-export interface ILogin {
-    email: string
-    password: string
-}
 
-export const login = ({ email, password}: ILogin) => async (dispatch: Dispatch, getState: () => any, { auth }: IServices) => {
-    const result = await auth.signInWithEmailAndPassword(email, password)
-    console.log(result)
+
+
+export const login = ({ email, password}: ILogin) => async (dispatch: Dispatch, getState: () => any, { auth }: IServices) =>
+    await auth.signInWithEmailAndPassword(email, password)
+
+export const register = ({ email, password }: ILogin) => async (dispatch: Dispatch, getState: () => any, { auth, db }: IServices) => {
+    const userCredential = await auth.createUserWithEmailAndPassword(email, password)
+    const { user } = userCredential
+    const id = user ? user.uid : undefined
+    const doc = db.collection('users').doc(id)
+    await doc.set({ role: 'user' })
 }

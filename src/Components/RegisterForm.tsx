@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { InjectedFormProps, reduxForm, Field } from 'redux-form';
 
 
-class LoginForm extends React.Component<InjectedFormProps<{ email: string }>> {
+class RegisterForm extends React.Component<InjectedFormProps<{ email: string }>> {
 
     public render() {
         const { handleSubmit } = this.props;
@@ -13,8 +13,8 @@ class LoginForm extends React.Component<InjectedFormProps<{ email: string }>> {
             <form onSubmit={handleSubmit}>
                 <Field placeholder='Correo' label='Correo' name='email' type='email' component={Input} />
                 <Field placeholder='Contraseña' label='Contraseña' name='password' type='password' component={Input} />
-                <Button>Login</Button>
-                <Link to='/Register'>Registrate</Link>
+                <Button>Register</Button>
+                <Link to='/Login'>Iniciar Sesión</Link>
             </form>
         );
     }
@@ -22,4 +22,4 @@ class LoginForm extends React.Component<InjectedFormProps<{ email: string }>> {
 
 export default reduxForm({
     form: 'login',
-})(LoginForm);
+})(RegisterForm);
