@@ -5,5 +5,6 @@ export interface IPost {
         comment: string
         userId: string
         createdAt: firestore.Timestamp
+        imageURL: string
     }
 }

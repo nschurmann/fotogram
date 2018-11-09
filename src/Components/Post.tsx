@@ -6,7 +6,11 @@ const style = {
     backgroundColor: '#fff',
     padding: '10px 15px',
     border: '1px solid #ddd',
-    marginBottom: '10px'
+    marginBottom: '10px',
+}
+
+const imageStyle = {
+    width: '90%',
 }
 
 interface IPostProps {
@@ -19,7 +23,7 @@ class Post extends React.Component<IPostProps> {
         const { image } = this.props;
         return (
             <div style={style}>
-                <img src={image} />
+                <img style={imageStyle} src={image} />
                 <Footer />
             </div>
         );
