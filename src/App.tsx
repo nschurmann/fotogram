@@ -29,7 +29,7 @@ class App extends Component<IAppProps> {
           const { history } = this.props
           history.push('/App/Newsfeed')
         }
-      } else if(/\app\/./.test(location.pathname)) {
+      } else if(/\app\/./.test(location.pathname) || '/'.indexOf(location.pathname) > -1 ) {
         const { history } = this.props
           history.push('/Login')
       }

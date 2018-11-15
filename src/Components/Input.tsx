@@ -24,11 +24,11 @@ interface IInputProps {
 }
 
 const Input: React.StatelessComponent<WrappedFieldProps & IInputProps> = (props) => {
-    const { label } = props
+    const { input, label } = props
     return (
         <div>
             <span style={SpanStyle}>{label}</span>
-            <input {...props} style={style} />
+            <input { ...input } {...props} style={style} />
         </div>
     )
 }

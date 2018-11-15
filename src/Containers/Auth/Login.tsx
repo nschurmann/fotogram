@@ -15,7 +15,7 @@ interface ILoginProps {
 class Login extends React.Component<ILoginProps> {
 
     public render() {
-        const { login } = this.props 
+        const { login } = this.props
         return (
             <Container center={true}>
                 <Card>

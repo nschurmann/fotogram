@@ -31,6 +31,7 @@ class NewsFeed extends React.Component<INewsFeedProps> {
 
     public render() {
         const { data } = this.props
+        console.log(data)
         return (
             <Container>
                 {Object.keys(data).map(x => {

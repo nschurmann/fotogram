@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { InjectedFormProps, reduxForm, Field } from 'redux-form';
 
 
-class RegisterForm extends React.Component<InjectedFormProps<{ email: string }>> {
+class RegisterForm extends React.Component<InjectedFormProps<{ email: string, password: string}>> {
 
     public render() {
         const { handleSubmit } = this.props;
@@ -20,6 +20,6 @@ class RegisterForm extends React.Component<InjectedFormProps<{ email: string }>>
     }
 }
 
-export default reduxForm({
+export default reduxForm<any, any>({
     form: 'login',
 })(RegisterForm);

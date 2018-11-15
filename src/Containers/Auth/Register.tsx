@@ -33,4 +33,4 @@ const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>) => ({
     register: (payload: any) => dispatch(registerThunk(payload))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(RegisterForm);
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
