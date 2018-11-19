@@ -15,16 +15,18 @@ const imageStyle = {
 
 interface IPostProps {
     image: string
+    like: () => void
+    share: () => void
 }
 
 class Post extends React.Component<IPostProps> {
 
     public render() {
-        const { image } = this.props;
+        const { image, like, share } = this.props;
         return (
             <div style={style}>
                 <img style={imageStyle} src={image} />
-                <Footer />
+                <Footer like={like} share={share} />
             </div>
         );
     }

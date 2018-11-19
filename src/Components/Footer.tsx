@@ -15,14 +15,19 @@ const button = {
     cursor: 'pointer'
 } as React.CSSProperties
 
+interface iFooterProps {
+    like: () => void
+    share: () => void
+}
 
-class Footer extends React.Component {
+class Footer extends React.Component<iFooterProps> {
 
     public render() {
+        const {like, share} = this.props
         return (
         <div style={footer}>
-            <div style={button}>Like</div>
-            <div style={button}>Compartir</div>
+            <div style={button} onClick={like}>Like</div>
+            <div style={button} onClick={share}>Compartir</div>
         </div>      
         );
     }

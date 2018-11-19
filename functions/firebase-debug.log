@@ -1,0 +1,32 @@
+[debug] [2018-11-19T13:34:12.001Z] ----------------------------------------------------------------------
+[debug] [2018-11-19T13:34:12.017Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\m.atienza.sanchez\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --only functions
+[debug] [2018-11-19T13:34:12.018Z] CLI Version:   6.0.1
+[debug] [2018-11-19T13:34:12.018Z] Platform:      win32
+[debug] [2018-11-19T13:34:12.018Z] Node Version:  v10.11.0
+[debug] [2018-11-19T13:34:12.021Z] Time:          Mon Nov 19 2018 14:34:12 GMT+0100 (GMT+01:00)
+[debug] [2018-11-19T13:34:12.021Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-19T13:34:12.050Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-19T13:34:12.051Z] > authorizing via signed-in user
+[debug] [2018-11-19T13:34:12.051Z] [iam] checking project fotogram-7baf4 for permissions ["firebase.projects.get"]
+[debug] [2018-11-19T13:34:12.078Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-19T13:34:12.079Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-19T13:34:12.506Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-19T13:34:12.573Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/fotogram-7baf4:testIamPermissions  
+
+[debug] [2018-11-19T13:34:13.499Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-19T13:34:13.501Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/fotogram-7baf4  
+ 
+[debug] [2018-11-19T13:34:14.371Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\m.atienza.sanchez\Documents\Repositorio\Mi Repo\fotogram'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-19T13:34:16.601Z] Fetching environment
+[debug] [2018-11-19T13:34:16.606Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/572564598057:getServerAppConfig  
+ 
+[debug] [2018-11-19T13:34:17.015Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-19T13:34:17.016Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-19T13:34:23.424Z] Parsing function triggers
+[info] +  functions: api: http://localhost:5000/fotogram-7baf4/us-central1/api
