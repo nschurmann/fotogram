@@ -31,7 +31,29 @@ export const fetchPost = () =>
     }
 
 export const like = (id: string) =>
-    async (dispatch: Dispatch, getState: () => any, {}: IServices) => { }
+    async (dispatch: Dispatch, getState: () => any, { auth }: IServices) => {
+        if (!auth.currentUser) {
+            return
+        }
+        const token = await auth.currentUser.getIdToken()
+        const path = '/api/posts/${id}/like'
+        await fetch(path, {
+            headers: {
+                authorization: token
+            }
+        })
+     }
 
 export const share = (id: string) =>
-    async (dispatch: Dispatch, getState: () => any, { }: IServices) => { }
+    async (dispatch: Dispatch, getState: () => any, { auth }: IServices) => {
+        if (!auth.currentUser) {
+            return
+        }
+        const token = await auth.currentUser.getIdToken()
+        const path = '/api/posts/${id}/share'
+        await fetch(path, {
+            headers: {
+                authorization: token
+            }
+        })
+    }
