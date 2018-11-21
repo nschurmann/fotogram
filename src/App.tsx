@@ -12,6 +12,7 @@ import { History } from 'history';
 
 interface IAppProps {
   history: History
+  loadInitialData: () => void
 }
 
 
@@ -25,6 +26,8 @@ class App extends Component<IAppProps> {
     const { auth } = services
     auth.onAuthStateChanged(user => {
       if (user) {
+        const { loadInitialData } = this.props
+        loadInitialData()
         if (['/Login','/register'].indexOf(location.pathname) > -1) {
           const { history } = this.props
           history.push('/App/Newsfeed')

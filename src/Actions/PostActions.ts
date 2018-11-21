@@ -1,5 +1,4 @@
-import { FetchActionsTypes } from "../Utils/ActionTypes";
-import { Action } from "redux";
+import { FetchActionsTypes, PostActionTypes } from "../Utils/ActionTypes";
 import { IPost } from "../Models/PostsModel";
 
 const fetchStart = () => ({
@@ -17,4 +16,9 @@ const fetchError = (error: Error) => ({
     error
 })
 
-export { fetchStart, fetchSuccess, fetchError };
+const addPost = (payload: IPost) => ({
+    type: PostActionTypes.ADD_POST,
+    payload
+})
+
+export { fetchStart, fetchSuccess, fetchError, addPost };

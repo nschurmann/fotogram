@@ -6,6 +6,7 @@ import { ThunkDispatch } from 'redux-thunk';
 import { bindActionCreators } from 'redux';
 import * as postThunk from "../../Thunks/Posts";
 import { IPost } from '../../Models/PostsModel';
+import { IState } from '../../Models/State';
 
 const divStyle = {
     margin: '0 auto'
@@ -53,7 +54,7 @@ class NewsFeed extends React.Component<INewsFeedProps> {
         share(id)}
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: IState) => {
     const { Posts: { data, fetched, fetching } } = state
     const loading = fetching || fetched
     return {

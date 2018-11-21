@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/lodash": "^4.14.118",
     "firebase": "^5.5.7",
     "history": "^4.7.2",
+    "lodash": "^4.17.11",
     "react": "^16.6.0",
     "react-dom": "^16.6.0",
     "react-loadable": "^5.5.0",
@@ -42,5 +44,5 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-form": "^7.4.8"
   },
-  "proxy": "localhost:5000/fotogram-7baf4/us-central1"
+  "proxy": "https://localhost:5000/fotogram-7baf4/us-central1"
 }

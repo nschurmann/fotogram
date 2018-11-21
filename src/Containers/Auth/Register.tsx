@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { register as registerThunk } from '../../Thunks/Users';
 import { ThunkDispatch } from 'redux-thunk';
 import { ILogin } from '../../Models/LoginModel';
+import { IState } from '../../Models/State';
 
 interface IRegisterProps {
     register: (a: ILogin) => void
@@ -27,7 +28,7 @@ class Register extends React.Component<IRegisterProps> {
     }
 }
 
-const mapStateToProps = (state:any) => state;
+const mapStateToProps = (state: IState) => state;
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>) => ({
     register: (payload: any) => dispatch(registerThunk(payload))

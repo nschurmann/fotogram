@@ -7,6 +7,7 @@ import LoginForm from '../../Components/LoginForm';
 import { login as loginThunk } from '../../Thunks/Users';
 import { ILogin } from '../../Models/LoginModel';
 import { ThunkDispatch } from 'redux-thunk';
+import { IState } from '../../Models/State';
 
 interface ILoginProps {
     login: (a: ILogin) => void
@@ -27,7 +28,7 @@ class Login extends React.Component<ILoginProps> {
     }
 }
 
-const mapStateToProps = (state:any) => state;
+const mapStateToProps = (state: IState) => state;
 
 const mapDispatchToProps = (dispatch: ThunkDispatch<any, any, any>) => ({
     login: (payload: any) => dispatch(loginThunk(payload))
