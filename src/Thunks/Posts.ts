@@ -10,7 +10,7 @@ export const fetchPost = () =>
         dispatch(PostActions.fetchStart())
         try {
             const snaps = await db.collection('posts').get()
-            const posts = {}
+            const posts: any = {}
             snaps.forEach(x => posts[x.id] = x.data())
             
             const imgIds = await Promise.all(Object.keys(posts)
@@ -20,7 +20,7 @@ export const fetchPost = () =>
                     return [x, url]
                 }))
             
-            const keyedImages = {}
+            const keyedImages: any = {}
             imgIds.forEach(x => keyedImages[x[0]] = x[1])
             
             Object.keys(posts).forEach(x => posts[x] = {
