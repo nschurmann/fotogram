@@ -1,12 +1,13 @@
-import { IPost } from "./PostsModel";
+import { IPost } from './PostsModel'
 
+export interface IPosts {
+  data: IPost;
+  fetched: boolean;
+  fetching: boolean;
+}
 export interface IState {
-    Posts: {
-        data: IPost
-        fetched: boolean
-        fetching: boolean
-    }
-    Users: {
-        profileImage?: string
-    }
+  Posts: IPosts;
+  Users: {
+    profileImage?: string;
+  };
 }
