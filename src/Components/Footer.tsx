@@ -20,17 +20,14 @@ interface iFooterProps {
     share: () => void
 }
 
-class Footer extends React.Component<iFooterProps> {
-
-    public render() {
-        const {like, share} = this.props
-        return (
+const Footer: React.StatelessComponent<iFooterProps> = (props) => {
+    const { like, share } = props
+    return (
         <div style={footer}>
             <div style={button} onClick={like}>Like</div>
             <div style={button} onClick={share}>Compartir</div>
-        </div>      
-        );
-    }
+        </div>
+    );
 }
 
 export default Footer;

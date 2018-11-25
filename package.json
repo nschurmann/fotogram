@@ -15,6 +15,7 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "redux": "^4.0.1",
+    "redux-devtools-extension": "^2.13.6",
     "redux-form": "^7.4.2",
     "redux-thunk": "^2.3.0",
     "typescript": "3.1.6"
@@ -44,5 +45,5 @@
     "@types/react-router-dom": "^4.3.1",
     "@types/redux-form": "^7.4.8"
   },
-  "proxy": "https://localhost:5000/fotogram-7baf4/us-central1"
+  "proxy": "http://localhost:5000/fotogram-7baf4/us-central1"
 }

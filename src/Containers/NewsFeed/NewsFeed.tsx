@@ -39,7 +39,12 @@ class NewsFeed extends React.Component<INewsFeedProps> {
             <Container>
                 {Object.keys(data).map(x => {
                     const post = data[x]
-                    return <div key={x} style={divStyle}><Post like={this.handleLike(x)} share={this.handleShare(x)} image={post.imageURL}/></div>
+                    return <div key={x} style={divStyle}>
+                    <Post 
+                        like={this.handleLike(x)} 
+                        share={this.handleShare(x)} 
+                        image={post.imageURL}/>
+                    </div>
                 })}
             </Container>
         );

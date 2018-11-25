@@ -1,8 +1,13 @@
 import { FetchActionsTypes, PostActionTypes } from "../Utils/ActionTypes";
 import { AnyAction } from "redux";
-import { IState } from "../Models/State";
 
-export default function reducer(state: IState, action: AnyAction) {
+const initialState = {
+    data: {},
+    fetching: false,
+    fetched: false
+}
+
+export default function reducer(state = initialState, action: AnyAction) {
     switch (action.type) {
         case FetchActionsTypes.START:
             return {
@@ -25,10 +30,7 @@ export default function reducer(state: IState, action: AnyAction) {
         case PostActionTypes.ADD_POST:
             return {
                 ...state,
-                data: {
-                    ...state,
-                    ...action.payload,
-                }
+                data: action.payload
             }
         default:
             return state

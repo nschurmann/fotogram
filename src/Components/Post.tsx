@@ -19,17 +19,14 @@ interface IPostProps {
     share: () => void
 }
 
-class Post extends React.Component<IPostProps> {
-
-    public render() {
-        const { image, like, share } = this.props;
-        return (
-            <div style={style}>
-                <img style={imageStyle} src={image} />
-                <Footer like={like} share={share} />
-            </div>
-        );
-    }
+const Post: React.StatelessComponent<IPostProps> = (props) => {
+    const { image, like, share } = props;
+    return (
+        <div style={style}>
+            <img style={imageStyle} src={image} />
+            <Footer like={like} share={share} />
+        </div>
+    );
 }
 
 export default Post;

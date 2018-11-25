@@ -5,20 +5,18 @@ import { Link } from 'react-router-dom';
 import { InjectedFormProps, reduxForm, Field } from 'redux-form';
 
 
-class RegisterForm extends React.Component<InjectedFormProps<{ email: string, password: string}>> {
-
-    public render() {
-        const { handleSubmit } = this.props;
-        return (
-            <form onSubmit={handleSubmit}>
-                <Field placeholder='Correo' label='Correo' name='email' type='email' component={Input} />
-                <Field placeholder='Contraseña' label='Contraseña' name='password' type='password' component={Input} />
-                <Button>Register</Button>
-                <Link to='/Login'>Iniciar Sesión</Link>
-            </form>
-        );
-    }
+const RegisterForm: React.StatelessComponent<InjectedFormProps<{ email: string, password: string }>> = (props) => {
+    const { handleSubmit } = props;
+    return (
+        <form onSubmit={handleSubmit}>
+            <Field placeholder='Correo' label='Correo' name='email' type='email' component={Input} />
+            <Field placeholder='Contraseña' label='Contraseña' name='password' type='password' component={Input} />
+            <Button>Register</Button>
+            <Link to='/Login'>Iniciar Sesión</Link>
+        </form>
+    );
 }
+
 
 export default reduxForm<any, any>({
     form: 'login',
