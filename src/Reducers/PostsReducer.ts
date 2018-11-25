@@ -26,7 +26,7 @@ export default function reducer(state: IState, action: AnyAction) {
             return {
                 ...state,
                 data: {
-                    ...state.data,
+                    ...state,
                     ...action.payload,
                 }
             }

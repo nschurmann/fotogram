@@ -50,6 +50,6 @@ class ImgProfile extends React.Component<InjectedFormProps<{}, ISubmitProps> & I
     }
 }
 
-export default reduxForm<{}, ISubmitProps>({
+export default reduxForm<any, any>({
     form: 'profileImg'
 })(ImgProfile);
