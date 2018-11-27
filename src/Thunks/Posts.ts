@@ -60,7 +60,7 @@ export const share = (id: string) =>
             }
         })
 
-        const url = await storage.ref('posts/${id}.jpg').getDownloadURL()
+        const url = await storage.ref(`posts/${id}.jpg`).getDownloadURL()
         const blob = await download(url)
         const { id: postId }: { id: string } = await result.json()
         const ref = storage.ref(`posts/${postId}.jpg`)
