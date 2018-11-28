@@ -6,10 +6,10 @@ import { IState } from "../Models/State";
 
 
 
-export const login = ({ email, password }: ILogin) => async (dispatch: Dispatch, getState: IState, { auth }: IServices) =>
+export const login = ({ email, password }: ILogin) => async (dispatch: Dispatch, getState: () => IState, { auth }: IServices) =>
     await auth.signInWithEmailAndPassword(email, password)
 
-export const register = ({ email, password }: ILogin) => async (dispatch: Dispatch, getState: IState, { auth, db }: IServices) => {
+export const register = ({ email, password }: ILogin) => async (dispatch: Dispatch, getState: () => IState, { auth, db }: IServices) => {
     const userCredential = await auth.createUserWithEmailAndPassword(email, password)
     const { user } = userCredential
     const id = user ? user.uid : undefined
@@ -33,7 +33,7 @@ export const loadUserInitialData = () =>
     }
 
 export const handleProfileImageSubmit = (payload: { file: File }) =>
-    async (dispatch: Dispatch, getState: IState, { auth, storage }: IServices) => {
+    async (dispatch: Dispatch, getState: () => IState, { auth, storage }: IServices) => {
         if (!auth.currentUser) {
             return
         }

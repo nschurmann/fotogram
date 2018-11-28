@@ -11,16 +11,14 @@ const divStyle = {
     float: 'right'
 } as React.CSSProperties
 
-class NavBar extends React.Component {
-
-    public render() {
-        return (
-            <div style={style}>
-                <Link to='/app/newsfeed'>FotoGram</Link>
-                <div style={divStyle}><Link to='/app/profile'>Perfil</Link></div>
-            </div>
-        );
-    }
+const NavBar: React.StatelessComponent = (props) => {
+    return (
+        <div style={style}>
+            <Link to='/app/newsfeed'>FotoGram</Link>
+            <div style={divStyle}><Link to='/app/profile'>Perfil</Link></div>
+        </div>
+    );
 }
+
 
 export default NavBar;

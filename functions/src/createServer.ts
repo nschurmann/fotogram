@@ -45,6 +45,7 @@ export default () => {
     app.get('/posts/:postId/like', async (req: IRequest, res) => {
         const { uid } = req.user
         const { postId } = req.params
+        
         const snaps = await db.collection('likes')
             .where('userId', '==', uid)
             .where('postId', '==', postId)

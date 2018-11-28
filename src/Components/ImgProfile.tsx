@@ -4,6 +4,7 @@ import {
 } from 'redux-form'
 
 const style = {
+
   img: {
     borderRadius: "100%",
     width: "100px",
@@ -48,6 +49,7 @@ const RenderField: React.StatelessComponent<
   </div>
 );
 
+
 class ImgProfile extends React.Component<
   InjectedFormProps<{}, ISubmitProps> & ISubmitProps
 > {
@@ -69,3 +71,4 @@ class ImgProfile extends React.Component<
 export default reduxForm<any, ISubmitProps>({
   form: "profileImg"
 })(ImgProfile);
+

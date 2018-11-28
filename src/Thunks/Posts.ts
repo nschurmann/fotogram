@@ -6,7 +6,7 @@ import { download } from "../Utils/Utils";
 import { IState } from "../Models/State";
 
 export const fetchPost = () => 
-    async (dispatch: Dispatch, getState: IState, { db, storage }: IServices) => {
+    async (dispatch: Dispatch, getState: () => IState, { db, storage }: IServices) => {
         dispatch(PostActions.fetchStart())
         try {
             const snaps = await db.collection('posts').get()
@@ -34,7 +34,7 @@ export const fetchPost = () =>
     }
 
 export const like = (id: string) =>
-    async (dispatch: Dispatch, getState: IState, { auth }: IServices) => {
+    async (dispatch: Dispatch, getState: () => IState, { auth }: IServices) => {
         if (!auth.currentUser) {
             return
         }
@@ -48,7 +48,7 @@ export const like = (id: string) =>
      }
 
 export const share = (id: string) =>
-    async (dispatch: Dispatch, getState: IState, { auth, db, storage }: IServices) => {
+    async (dispatch: Dispatch, getState: () => IState, { auth, db, storage }: IServices) => {
         if (!auth.currentUser) {
             return
         }
@@ -60,7 +60,7 @@ export const share = (id: string) =>
             }
         })
 
-        const url = await storage.ref('posts/${id}.jpg').getDownloadURL()
+        const url = await storage.ref(`posts/${id}.jpg`).getDownloadURL()
         const blob = await download(url)
         const { id: postId }: { id: string } = await result.json()
         const ref = storage.ref(`posts/${postId}.jpg`)

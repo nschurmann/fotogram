@@ -6,16 +6,14 @@ const style = {
     border: '1px solid #ddd'
 }
 
-class Card extends React.Component {
-
-    public render() {
-        const { children } = this.props;
-        return (
-            <div style={style}>
-                { children }
-            </div>
-        );
-    }
+const Card: React.StatelessComponent = (props) => {
+    const { children } = props;
+    return (
+        <div style={style}>
+            {children}
+        </div>
+    );
 }
+
 
 export default Card;

@@ -6,21 +6,18 @@ const style = (block: boolean) => ({
     border: '0px',
     borderRadius: '4px',
     color: '#fff',
-    width: block ? '100%': undefined
+    width: block ? '100%' : undefined
 })
 
 interface IButton {
     block?: boolean
 }
 
-class Button extends React.Component<IButton> {
-
-    public render() {
-        const { block = false } = this.props
-        return (
-            <button {...this.props} style={style(block)}/>
-        );
-    }
+const Button: React.StatelessComponent<IButton> = (props) => {
+    const { block = false } = props
+    return (
+        <button {...props} style={style(block)} />
+    );
 }
 
 export default Button;
